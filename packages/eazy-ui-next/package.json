@@ -3,9 +3,23 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      },
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      }
+    }
+  },
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.mjs",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite build",
+    "build": "rimraf lib && vue-tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -16,6 +30,7 @@
     "@vitejs/plugin-vue": "^4.2.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.0",
     "vue-tsc": "^1.8.5"
   }
 }
