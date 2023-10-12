@@ -1,0 +1,20 @@
+{
+  "name": "@eazy-ui-next/utils",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    }
+  },
+  "module": "./lib/index.js",
+  "scripts": {
+    "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json"
+  }
+}

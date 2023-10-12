@@ -13,9 +13,12 @@
     "pnpm": ">=8"
   },
   "scripts": {
+    "test": "vitest",
     "commit": "cz",
-    "lint": "eslint --ext .ts,.tsx,.vue,.js,.jsx src --fix",
-    "postinstall": "simple-git-hooks"
+    "lint": "eslint --fix",
+    "postinstall": "simple-git-hooks",
+    "build:ui": "pnpm -F @eazy-ui-next/components build",
+    "build:utils": "pnpm -F @eazy-ui-next/utils build"
   },
   "devDependencies": {
     "@antfu/eslint-config": "1.0.0-beta.26",
@@ -23,10 +26,13 @@
     "@commitlint/config-conventional": "^17.7.0",
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.0.0",
+    "esbuild": "^0.19.4",
     "eslint": "^8.51.0",
     "lint-staged": "^14.0.1",
+    "rimraf": "^5.0.5",
     "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "vitest": "1.0.0-beta.1"
   },
   "config": {
     "commitizen": {
