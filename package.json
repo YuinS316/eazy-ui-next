@@ -13,6 +13,7 @@
     "pnpm": ">=8"
   },
   "scripts": {
+    "commit": "cz",
     "lint": "eslint --ext .ts,.tsx,.vue,.js,.jsx src --fix",
     "postinstall": "simple-git-hooks"
   },
@@ -20,13 +21,24 @@
     "@antfu/eslint-config": "1.0.0-beta.26",
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
+    "commitizen": "^4.3.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.51.0",
     "lint-staged": "^14.0.1",
     "simple-git-hooks": "^2.9.0",
     "typescript": "^5.2.2"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-configrc.cjs"
+    }
+  },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm lint-staged",
+    "commit-msg": "npx --no -- commitlint --edit ${1}"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
