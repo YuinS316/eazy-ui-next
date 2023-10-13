@@ -1,6 +1,6 @@
 {
   "name": "@eazy-ui-next/utils",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "author": "",
   "license": "ISC",
@@ -16,5 +16,9 @@
   "module": "./lib/index.js",
   "scripts": {
     "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
