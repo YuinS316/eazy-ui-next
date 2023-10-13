@@ -2,9 +2,9 @@
   "name": "@eazy-ui-next/utils",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "yuins316",
   "license": "ISC",
-  "keywords": [],
+  "keywords": ["utils"],
   "exports": {
     ".": {
       "import": {
@@ -15,10 +15,7 @@
   },
   "module": "./lib/index.js",
   "scripts": {
-    "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/",
-    "access": "public"
+    "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json",
+    "pub": "pnpm publish ./lib"
   }
 }

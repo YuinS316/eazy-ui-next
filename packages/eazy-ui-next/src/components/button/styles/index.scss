@@ -1,0 +1,9 @@
+@use "../../_styles/index.scss";
+
+:root {
+  --ez-button-color: var(--primary-color);
+}
+
+.ez-button {
+  color: var(--ez-button-color);
+}

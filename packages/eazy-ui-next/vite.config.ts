@@ -1,39 +1,52 @@
+import { resolve } from 'node:path'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
+import autoprefixer from 'autoprefixer'
+
+function _resolve(dir: string) {
+  return resolve(__dirname, dir)
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), dts()],
+  resolve: {
+    alias: {
+      '@': _resolve('src'),
+    },
+  },
   build: {
+    target: 'modules',
+    // 打包文件目录
     outDir: 'lib',
-    // minify: false,
+    // 压缩
+    minify: false,
+    // css分离
+    // cssCodeSplit: true,
+    // emptyOutDir: true,
     rollupOptions: {
       // 忽略打包vue文件
       external: ['vue'],
-      input: ['index.ts'],
+      input: ['src/index.ts'],
       output: [
         {
-          // 打包格式
           format: 'es',
-          // 打包后文件名
+          // 不用打包成.es.js,这里我们想把它打包成.js
           entryFileNames: '[name].mjs',
           // 让打包目录和我们目录对应
           preserveModules: true,
-          exports: 'named',
           // 配置打包根目录
           dir: 'lib/esm',
+          preserveModulesRoot: 'src',
         },
         {
-          // 打包格式
           format: 'cjs',
-          // 打包后文件名
           entryFileNames: '[name].js',
           // 让打包目录和我们目录对应
           preserveModules: true,
-          exports: 'named',
           // 配置打包根目录
           dir: 'lib/cjs',
+          preserveModulesRoot: 'src',
         },
       ],
     },
@@ -41,4 +54,23 @@ export default defineConfig({
       entry: './index.ts',
     },
   },
+  css: {
+    postcss: {
+      plugins: [autoprefixer],
+    },
+  },
+  plugins: [
+    vue(),
+    dts({
+      entryRoot: './src',
+      outDir: 'lib/cjs',
+      tsconfigPath: './tsconfig.json',
+    }),
+    dts({
+      entryRoot: './src',
+      outDir: 'lib/esm',
+      tsconfigPath: './tsconfig.json',
+    }),
+  ],
+
 })

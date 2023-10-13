@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ez-button">
     我是button -- {{ props.modelValue }}
   </div>
 </template>
@@ -14,6 +14,6 @@ const props = defineProps<{
 }>()
 </script>
 
-<style scoped>
-
+<style lang="scss">
+@use "./styles/index.scss";
 </style>

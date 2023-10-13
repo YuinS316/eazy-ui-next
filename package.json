@@ -19,12 +19,13 @@
     "postinstall": "simple-git-hooks",
     "build:ui": "pnpm -F @eazy-ui-next/components build",
     "build:utils": "pnpm -F @eazy-ui-next/utils build",
-    "publish:utils": "pnpm -F @eazy-ui-next/utils publish"
+    "publish:utils": "pnpm -F @eazy-ui-next/utils pub"
   },
   "devDependencies": {
     "@antfu/eslint-config": "1.0.0-beta.26",
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
+    "@types/node": "^18.16.20",
     "commitizen": "^4.3.0",
     "cz-customizable": "^7.0.0",
     "esbuild": "^0.19.4",
