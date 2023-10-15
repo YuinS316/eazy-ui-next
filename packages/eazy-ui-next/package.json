@@ -6,25 +6,32 @@
   "exports": {
     ".": {
       "require": {
-        "types": "./lib/cjs/index.d.ts",
-        "default": "./lib/cjs/index.js"
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
       },
       "import": {
-        "types": "./lib/esm/index.d.ts",
-        "default": "./lib/esm/index.mjs"
+        "types": "./es/index.d.ts",
+        "default": "./es/index.mjs"
       }
     }
   },
-  "main": "./lib/cjs/index.js",
-  "module": "./lib/esm/index.mjs",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
+  "unpkg": "dist/index.min.js",
+  "jsdelivr": "dist/index.min.js",
   "scripts": {
     "dev": "vite",
-    "build": "rimraf lib && vue-tsc && vite build",
+    "build": "gulp --require @esbuild-kit/cjs-loader -f scripts/build/gulpfile.ts",
+    "build:vite": "rimraf lib && vue-tsc && vite build",
     "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "3.2.47"
   },
   "dependencies": {
     "@eazy-ui-next/utils": "workspace:^",
-    "vue": "^3.3.4"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
