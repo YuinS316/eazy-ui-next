@@ -14,7 +14,7 @@
     "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
-    "types": ["unplugin-vue-define-options"],
+    "types": ["unplugin-vue-define-options/macros-global"],
     "allowSyntheticDefaultImports": true
   }
 }

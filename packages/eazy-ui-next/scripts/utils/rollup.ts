@@ -1,4 +1,4 @@
-import type { ExternalOption } from 'rollup'
+import type { ExternalOption, OutputOptions, RollupBuild } from 'rollup'
 import { compPackage } from './paths'
 import { getPackageDependencies } from './pkg'
 
@@ -41,4 +41,8 @@ export function generatePaths() {
 
     return ''
   }
+}
+
+export function writeBundles(bundle: RollupBuild, options: OutputOptions[]) {
+  return Promise.all(options.map(option => bundle.write(option)))
 }

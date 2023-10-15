@@ -4,7 +4,9 @@
   "description": "",
   "author": "yuins316",
   "license": "ISC",
-  "keywords": ["utils"],
+  "keywords": [
+    "utils"
+  ],
   "exports": {
     ".": {
       "import": {
@@ -17,5 +19,11 @@
   "scripts": {
     "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json",
     "pub": "pnpm publish ./lib"
+  },
+  "peerDependencies": {
+    "vue": "~3.2.47"
+  },
+  "dependencies": {
+    "vue": "~3.2.47"
   }
 }

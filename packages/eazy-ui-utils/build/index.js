@@ -4,7 +4,7 @@ const path = require('node:path')
 const { build } = require('esbuild')
 
 async function main() {
-  build(
+  await build(
     {
       bundle: true,
       outdir: 'lib',

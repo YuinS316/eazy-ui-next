@@ -1,0 +1,22 @@
+{
+  "name": "@eazy-ui-next/examples",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "3.2.47",
+    "@eazy-ui-next/utils": "workspace:^",
+    "@eazy-ui-next/components": "workspace:^"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}
