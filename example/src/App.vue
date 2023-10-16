@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
-import { EzButton } from "@eazy-ui-next/components"
+// import { EzButton } from "@eazy-ui-next/components"
 </script>
 
 <template>

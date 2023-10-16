@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDefineOptions from 'unplugin-vue-define-options/rollup'
 import esbuild from 'rollup-plugin-esbuild'
-import { outputCjs, outputEsm, root } from '../../utils/paths'
+import { compRoot, outputCjs, outputEsm } from '../../utils/paths'
 import { generateExternal, generatePaths, target } from '../../utils/rollup'
 
 /**
@@ -13,7 +13,7 @@ import { generateExternal, generatePaths, target } from '../../utils/rollup'
  */
 export async function buildModules() {
   //  入口
-  const input = [resolve(root, 'index.ts')]
+  const input = [resolve(compRoot, 'index.ts')]
 
   //  编辑
   const bundle = await rollup({

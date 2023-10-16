@@ -10,7 +10,7 @@ import { buttonProps } from "./props";
 import { isArray } from "@eazy-ui-next/utils";
 
 defineOptions({
-  name: 'EzButton'
+  name: 'ez-button'
 })
 
 const props = defineProps(buttonProps)
