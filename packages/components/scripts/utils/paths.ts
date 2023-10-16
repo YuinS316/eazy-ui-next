@@ -2,7 +2,7 @@ import { resolve } from 'node:path'
 
 // root
 export const pkgRoot = resolve(__dirname, '..', '..', '..')
-export const root = resolve(pkgRoot, 'eazy-ui-next')
+export const root = resolve(pkgRoot, 'components')
 export const compRoot = resolve(root, 'src')
 
 // output
