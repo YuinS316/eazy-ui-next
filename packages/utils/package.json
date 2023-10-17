@@ -1,6 +1,6 @@
 {
   "name": "@eazy-ui-next/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": "yuins316",
   "license": "ISC",
@@ -10,15 +10,21 @@
   "exports": {
     ".": {
       "import": {
+        "types": "./es/index.d.ts",
+        "default": "./es/index.mjs"
+      },
+      "require": {
         "types": "./lib/index.d.ts",
         "default": "./lib/index.js"
       }
     }
   },
-  "module": "./lib/index.js",
+  "main": "lib/index.js",
+  "module": "es/index.mjs",
+  "types": "es/index.d.ts",
   "scripts": {
-    "build": "rimraf lib && node ./build/index.js && tsc --project tsconfig.build.json",
-    "pub": "pnpm publish ./lib"
+    "build": "gulp --require @esbuild-kit/cjs-loader -f scripts/build/gulpfile.ts",
+    "pub": "pnpm publish"
   },
   "peerDependencies": {
     "vue": "~3.2.47"

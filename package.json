@@ -19,6 +19,7 @@
     "postinstall": "simple-git-hooks",
     "build:ui": "pnpm -F @eazy-ui-next/components build",
     "build:utils": "pnpm -F @eazy-ui-next/utils build",
+    "publish:components": "pnpm -F @eazy-ui-next/components pub",
     "publish:utils": "pnpm -F @eazy-ui-next/utils pub"
   },
   "devDependencies": {

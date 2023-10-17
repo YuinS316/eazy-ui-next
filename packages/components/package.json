@@ -1,7 +1,6 @@
 {
   "name": "@eazy-ui-next/components",
   "version": "0.0.0",
-  "private": true,
   "main": "lib/index.js",
   "module": "es/index.mjs",
   "types": "es/index.d.ts",
@@ -11,7 +10,8 @@
     "dev": "vite",
     "build": "gulp --require @esbuild-kit/cjs-loader -f scripts/build/gulpfile.ts",
     "build:vite": "rimraf lib && vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pub": "pnpm publish"
   },
   "peerDependencies": {
     "vue": "3.2.47"
