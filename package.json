@@ -12,6 +12,7 @@
     "node": ">=18",
     "pnpm": ">=8"
   },
+  "packageManager": "^pnpm@8.2.0",
   "scripts": {
     "test": "vitest",
     "commit": "cz",
@@ -73,5 +74,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,vue}": "eslint --fix"
+  },
+  "dependencies": {
+    "@eazy-ui-next/components": "workspace:^",
+    "@vue/runtime-core": "^3.3.4"
   }
 }

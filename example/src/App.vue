@@ -1,10 +1,10 @@
 <script setup lang="ts">
 // import HelloWorld from './components/HelloWorld.vue'
-// import { EzButton } from "@eazy-ui-next/components"
+// import { Button as  EzButton } from "@eazy-ui-next/components"
 </script>
 
 <template>
-  <EzButton type="default"></EzButton>
+  <EzButton :type="'default'"></EzButton>
 </template>
 
 <style scoped>

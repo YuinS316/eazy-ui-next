@@ -1,5 +1,5 @@
 import { defineListenerProps } from '@eazy-ui-next/utils'
-import type { ExtractPropTypes } from 'vue'
+import type { ExtractPropTypes, PropType } from 'vue'
 
 export const ButtonType = [
   'default',
@@ -13,8 +13,11 @@ export const ButtonSize = ['large', 'normal', 'small', 'mini']
 
 export const buttonProps = {
   type: {
-    type: String,
+    type: String as PropType<'default' | 'primary'>,
     values: ButtonType,
+    validator(value: string) {
+      return ButtonType.includes(value)
+    },
     default: 'default',
   },
   size: {

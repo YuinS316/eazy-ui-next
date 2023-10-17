@@ -7,7 +7,6 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
-    EzButton: typeof import('@eazy-ui-next/components/es')['Button']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
   }
 }
