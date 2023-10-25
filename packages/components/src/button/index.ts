@@ -1,4 +1,4 @@
-import { withInstall } from '@eazy-ui-next/utils'
+import { withInstall } from '../_utils/define'
 import _Button from './src/button.vue'
 
 export const Button = withInstall(_Button)

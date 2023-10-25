@@ -1,5 +1,47 @@
-$primary-color: #fff;
-
 :root {
-  --primary-color: #{$primary-color};
+  // base color
+  --ez-black: #000;
+  --ez-white: #fff;
+  --ez-gray-1: #f7f8fa;
+  --ez-gray-2: #f2f3f5;
+  --ez-gray-3: #ebedf0;
+  --ez-gray-4: #dcdee0;
+  --ez-gray-5: #c8c9cc;
+  --ez-gray-6: #969799;
+  --ez-gray-7: #646566;
+  --ez-gray-8: #323233;
+  --ez-blue: #3669e7;
+  --ez-green: #03A64A;
+  --ez-orange: #FA7F08;
+  --ez-red: #F24405;
+
+  //  component color
+  --ez-primary-color: var(--ez-blue);
+  --ez-success-color: var(--ez-green);
+  --ez-danger-color: var(--ez-red);
+  --ez-warning-color: var(--ez-orange);
+
+  //  padding
+  --ez-pd-xs: 4px;
+  --ez-pd-s: 8px;
+  --ez-pd-n: 12px;
+  --ez-pd-l: 16px;
+  --ez-pd-xl: 24px;
+  --ez-pd-xxl: 32px;
+
+  //  font
+  --ez-font-bold: 600;
+  --ez-size-xs: 10px;
+  --ez-size-s: 12px;
+  --ez-size-n: 14px;
+  --ez-size-l: 16px;
+  --ez-size-xl: 24px;
+
+  //  border
+  --ez-border-color: var(--ez-gray-3);
+  --ez-border-width: 1px;
+  --ez-radius-s: 2px;
+  --ez-radius-n: 4px;
+  --ez-radius-l: 8px;
+  --ez-radius-xl: 999px;
 }

@@ -1,5 +1,5 @@
-import { defineListenerProps } from '@eazy-ui-next/utils'
-import type { ExtractPropTypes, PropType } from 'vue'
+import type { ExtractPropTypes } from 'vue'
+import { defineListenerProps, defineStringProp } from '../../_utils/define'
 
 export const ButtonType = [
   'default',
@@ -7,24 +7,13 @@ export const ButtonType = [
   'success',
   'danger',
   'warning',
-]
+] as const
 
-export const ButtonSize = ['large', 'normal', 'small', 'mini']
+export const ButtonSize = ['large', 'normal', 'small', 'mini'] as const
 
 export const buttonProps = {
-  type: {
-    type: String as PropType<'default' | 'primary'>,
-    values: ButtonType,
-    validator(value: string) {
-      return ButtonType.includes(value)
-    },
-    default: 'default',
-  },
-  size: {
-    type: String,
-    values: ButtonSize,
-    default: 'normal',
-  },
+  type: defineStringProp<typeof ButtonType[number]>('default'),
+  size: defineStringProp<typeof ButtonSize[number]>('normal'),
   round: {
     type: Boolean,
     default: false,
@@ -33,6 +22,7 @@ export const buttonProps = {
     type: Boolean,
     default: false,
   },
+  // 模仿块级元素
   block: {
     type: Boolean,
     default: false,

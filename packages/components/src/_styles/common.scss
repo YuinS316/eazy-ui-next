@@ -1,0 +1,56 @@
+.ez {
+  &--box {
+    box-sizing: border-box;
+
+    * {
+      box-sizing: border-box;
+    }
+  }
+
+  &--relative {
+    position: relative;
+  }
+
+  &--absolute {
+    position: absolute;
+  }
+
+  &--hidden {
+
+    display: none;
+  }
+
+  &--visible {
+    visibility: visible;
+  }
+
+  &--invisible {
+    visibility: hidden;
+  }
+
+  &--block {
+    display: block;
+  }
+
+  &--inline-block {
+    display: inline-block;
+  }
+
+  &--inline {
+    display: inline;
+  }
+
+  &--flex {
+    display: flex;
+  }
+
+  &--ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &--pointer {
+    cursor: pointer;
+  }
+}
