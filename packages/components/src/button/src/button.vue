@@ -1,22 +1,48 @@
-<template>
-  <div class="ez-button">
-    <div>type: {{ props.type }} -- {{ display }}</div>
-  </div>
-</template>
-
 <script setup lang="ts">
-import {computed, toRefs} from "vue";
-import { buttonProps } from "./props";
-import { isArray } from "@eazy-ui-next/utils";
+import { toRefs } from 'vue'
+import { createNamespace } from '../../_utils/define'
+import { call } from '../../_utils/components'
+import { buttonProps } from './props'
 
 defineOptions({
-  name: 'ez-button'
+  name: 'EzButton',
 })
 
 const props = defineProps(buttonProps)
 
-const display = computed(() => isArray(props.type) ? '数组' : '非数组')
+const { n, cls } = createNamespace('button')
+
+const {
+  type,
+  size,
+  round,
+  disabled,
+  block,
+} = toRefs(props)
+
+function handleClick(e: Event) {
+  const { onClick } = props
+
+  if (!onClick || disabled.value === true)
+    return
+
+  call(onClick, e)
+}
 </script>
 
-<style lang="scss">
-</style>
+<template>
+  <button
+    :class="cls(
+      n(),
+      n('&--box'),
+      n(`--${type}`),
+      n(`--${size}`),
+      [round, n('--round')],
+      [disabled, n('--disabled')],
+      [block, n('--block')],
+    )"
+    @click="handleClick"
+  >
+    <slot />
+  </button>
+</template>
