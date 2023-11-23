@@ -1,0 +1,67 @@
+@use "../../_styles/index.scss";
+:root {
+  //  color
+  --ez-input-border-color: var(--ez-primary-color);
+  --ez-input-placeholder-color: var(--ez-grey-color);
+  --ez-input-disabled-color: var(--ez-disabled-color);
+  //  bg
+  --ez-input-disabled-bg-color: var(--ez-disabled-bg-color);
+  //  size
+  --ez-input-height: 34px;
+}
+
+.ez-input {
+  input,textarea {
+    outline: none;
+    border: none;
+    font-size: var(--ez-font-n);
+  }
+
+  input {
+    width: 100%;
+    height: var(--ez-input-height);
+  }
+
+  &__focus {
+    &--wrapper {
+      border: 1px solid var(--ez-input-border-color);
+    }
+  }
+
+  &--wrapper {
+    border: 1px solid var(--ez-border-color);
+    border-radius: var(--ez-radius-n);
+    padding: 0 var(--ez-pd-n);
+    cursor: text;
+    transition: border-color .3s ease-in-out;
+
+    &:hover {
+      border-color: var(--ez-input-border-color);
+    }
+  }
+
+  &--input {
+    position: relative;
+  }
+
+  &--disabled {
+    cursor: not-allowed;
+    background: var(--ez-input-disabled-bg-color);
+    color: var(--ez-input-disabled-color);
+
+    input,textarea {
+      cursor: not-allowed;
+    }
+  }
+
+  &--placeholder {
+    position: absolute;
+    top: 0;
+    height: var(--ez-input-height);
+    display: flex;
+    align-items: center;
+    color: var(--ez-input-placeholder-color);
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

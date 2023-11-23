@@ -21,6 +21,7 @@
     "build:ui": "pnpm -F @eazy-ui-next/components build",
     "build:utils": "pnpm -F @eazy-ui-next/utils build",
     "publish:utils": "pnpm -F @eazy-ui-next/utils pub",
+    "new:components": "hygen component new",
     "publish:components": "pnpm -F @eazy-ui-next/components pub",
     "test:components": "pnpm -F @eazy-ui-next/examples cypress:open"
   },

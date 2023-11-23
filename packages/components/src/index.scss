@@ -1,1 +1,3 @@
-@use "./button/style/index.scss";
+// template inject
+@use "./input/style/index.scss" as ez-input; 
+@use "./button/style/index.scss" as ez-button;

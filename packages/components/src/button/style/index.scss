@@ -34,7 +34,7 @@
 
   height: var(--ez-button-height);
   border-radius: var(--ez-button-default-border-radius);
-  font-size: var(--ez-size-n);
+  font-size: var(--ez-font-n);
   outline: none;
   border: 1px solid rgb(224, 224, 230);
   color: transparent;
@@ -133,7 +133,7 @@
   }
 
   &--mini {
-    font-size: var(--ez-size-s);
+    font-size: var(--ez-font-s);
     height: var(--ez-button-mini-height);
     padding: var(--ez-button-mini-padding);
   }

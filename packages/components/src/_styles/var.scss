@@ -20,6 +20,9 @@
   --ez-success-color: var(--ez-green);
   --ez-danger-color: var(--ez-red);
   --ez-warning-color: var(--ez-orange);
+  --ez-grey-color: rgba(194, 194, 194, 1);
+  --ez-disabled-color: rgba(209, 209, 209, 1);
+  --ez-disabled-bg-color: rgb(250, 250, 252);
 
   //  padding
   --ez-pd-xs: 4px;
@@ -31,11 +34,11 @@
 
   //  font
   --ez-font-bold: 600;
-  --ez-size-xs: 10px;
-  --ez-size-s: 12px;
-  --ez-size-n: 14px;
-  --ez-size-l: 16px;
-  --ez-size-xl: 24px;
+  --ez-font-xs: 10px;
+  --ez-font-s: 12px;
+  --ez-font-n: 14px;
+  --ez-font-l: 16px;
+  --ez-font-xl: 24px;
 
   //  border
   --ez-border-color: var(--ez-gray-3);
